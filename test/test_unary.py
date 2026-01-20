@@ -57,3 +57,27 @@ class TestBase1Arithmetic:
         reconstructed = (d * q) + r
         print(f"   -> Reconstruct: {d}*{q} + {r} = {reconstructed}")
         assert int(reconstructed) == int(n)
+
+    # --- Modulo Cases (The Field Requirement) ---
+    # Logic: Modulo operates on Mass (Length) but preserves Dividend Sign.
+    # |5| % |3| = 2. 
+    # S(5) % U(3) -> Remainder is -2 (S(2))
+    mod_cases = [
+        (U(5), U(3), 2, NonNegativeInteger),
+        (S(5), U(3), -2, NegativeInteger), # Corrected Expectation
+        (U(5), U(5), 0, NonNegativeInteger),
+        (U(0), U(5), 0, NonNegativeInteger),
+    ]
+
+    mod_ids = [f"{n}%{d}={exp}" for n, d, exp, _ in mod_cases]
+
+    @pytest.mark.parametrize("n, d, expected_val, expected_type", mod_cases, ids=mod_ids)
+    def test_modulo(self, n, d, expected_val, expected_type):
+        print(f"\n[LAB] Modulo: {n} % {d}")
+        result = n % d
+        
+        # Special check for Vacuum result representation
+        if expected_val == 0:
+            assert result.is_vacuum
+        
+        assert_physics(result, expected_val, expected_type)

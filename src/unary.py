@@ -41,6 +41,21 @@ class NonNegativeInteger:
         
     def __mul__(self, other: Any) -> "Algebraic": return smart_mul(self, other)
     def __truediv__(self, other: Any) -> tuple["Algebraic", "Algebraic"]: return smart_div(self, other)
+    
+    # [NEW] Modulo Operator: Remainder of Truncated Division
+    def __mod__(self, other: Any) -> "NonNegativeInteger":
+        # 1. Determine Mass of other
+        if hasattr(other, 'mass'): m_other = other.mass
+        elif hasattr(other, '__len__'): m_other = len(other)
+        else: return NotImplemented
+        
+        if m_other == 0: raise ZeroDivisionError("Cannot mod by Vacuum")
+        
+        # 2. Calculate Remainder of Mass
+        rem = self.mass % m_other
+        
+        # 3. Return New Matter (Positive Dividend -> Positive Remainder)
+        return U(rem)
 
     def __lt__(self, other: Any) -> bool:
         if isinstance(other, NonNegativeInteger): return len(self) < len(other)
@@ -93,6 +108,21 @@ class NegativeInteger:
         
     def __mul__(self, other: Any) -> "Algebraic": return smart_mul(self, other)
     def __truediv__(self, other: Any) -> tuple["Algebraic", "Algebraic"]: return smart_div(self, other)
+
+    # [NEW] Modulo Operator: Remainder of Truncated Division
+    def __mod__(self, other: Any) -> "NegativeInteger":
+        # 1. Determine Mass of other
+        if hasattr(other, 'mass'): m_other = other.mass
+        elif hasattr(other, '__len__'): m_other = len(other)
+        else: return NotImplemented
+        
+        if m_other == 0: raise ZeroDivisionError("Cannot mod by Vacuum")
+        
+        # 2. Calculate Remainder of Mass
+        rem = self.mass % m_other
+        
+        # 3. Return New Matter (Negative Dividend -> Negative Remainder)
+        return S(rem)
 
     def __lt__(self, other: Any) -> bool:
         if isinstance(other, NonNegativeInteger): return True 
@@ -150,6 +180,9 @@ def smart_div(a: Integer, b: Integer) -> tuple[Integer, Integer]:
     r_str = "|" * r_mag
     if isinstance(a, type(b)): quotient = NonNegativeInteger(q_str)
     else: quotient = NegativeInteger(q_str)
+    
+    # [CORRECTED LOGIC] Remainder gets sign of Dividend (a)
     if isinstance(a, NonNegativeInteger): remainder = NonNegativeInteger(r_str)
     else: remainder = NegativeInteger(r_str)
+    
     return (quotient, remainder)

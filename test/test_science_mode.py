@@ -55,12 +55,36 @@ def verify_division_logic():
     
     # Verification Logic
     # Expected: -3, Remainder -1 (Truncated)
-    # Python Native would give: -4, Remainder 1 (Floor)
     
     if int(s_q) == -3 and int(s_r) == -1:
         print("STATUS: PASS (Science Mode correctly implements Truncated Division)")
     else:
         print("STATUS: FAIL (Science Mode drifted to Python Native behavior)")
+
+def verify_modulo_logic():
+    """
+    The critical test for Field Logic Agnosticism.
+    Physics Mode defines % as operating on MASS (Magnitude) with Dividend Sign.
+    S(5) % U(3) -> |-5| % |3| = 2 -> Sign(-) -> -2.
+    """
+    print("\n--- Critical Test: Mass Modulo (S(5) % U(3)) ---")
+    
+    # Physics Mode
+    p_res = physics.S(5) % physics.U(3)
+    
+    # Science Mode
+    s_res = science.S(5) % science.U(3)
+    
+    print(f"Physics Result: {p_res}")
+    print(f"Science Result: {s_res}")
+    
+    expected_val = -2
+    
+    if int(s_res) == expected_val:
+        print("STATUS: PASS (Science Mode correctly implements Signed Mass Modulo)")
+    else:
+        print(f"STATUS: FAIL (Science Mode mismatch. Got {int(s_res)}, Expected {expected_val})")
+
 
 def test_run_suite():
     print("=== Backend Isomorphism Verification ===")
@@ -85,3 +109,6 @@ def test_run_suite():
     
     # Test 3: Division
     verify_division_logic()
+
+    # Test 4: Modulo
+    verify_modulo_logic()

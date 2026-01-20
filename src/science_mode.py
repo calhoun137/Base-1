@@ -92,6 +92,25 @@ class FastInteger:
         if num is NotImplemented: return NotImplemented
         return FastInteger(num) / self
 
+    # [NEW] Modulo Operator: Truncated Remainder
+    def __mod__(self, other: Any) -> "FastInteger":
+        val = self._extract(other)
+        if val is NotImplemented: return NotImplemented
+        
+        m_self = abs(self._val)
+        m_other = abs(val)
+        
+        if m_other == 0: raise ZeroDivisionError("ScienceMode: Modulo by zero")
+        
+        # Calculate Magnitude of Remainder
+        r_mag = m_self % m_other
+        
+        # Apply Sign of Dividend (self)
+        if self._val < 0:
+            return FastInteger(-r_mag)
+        else:
+            return FastInteger(r_mag)
+
     # --- Comparison Operations ---
     
     def __eq__(self, other: Any) -> bool:

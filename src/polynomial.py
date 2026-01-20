@@ -95,22 +95,46 @@ class Polynomial(Algebraic):
         return Polynomial(new_coeffs)
 
     def __mul__(self, other: Any) -> "Polynomial":
-        if not isinstance(other, Polynomial): return NotImplemented
+        if not isinstance(other, Polynomial):
+            return NotImplemented
+
+        # --- [HARDENED KERNEL START] ---
+        # 1. The Vacuum Check
+        # In a Constructivist Universe, "Nothing times Something is Nothing."
+        # If either polynomial has no coefficients (True Vacuum), 
+        # the result is immediately the Vacuum.
+        if not self.coeffs or not other.coeffs:
+            return self.__class__([])
+        # --- [HARDENED KERNEL END] ---
+
+        # 2. Standard Arithmetic (Safe to proceed)
         n = len(self.coeffs)
         m = len(other.coeffs)
-        
+
+        # This line previously crashed because self.coeffs was empty.
+        # Now, we are guaranteed at least one element exists.
         sample = self.coeffs[0]
-        if hasattr(sample, '_val'): from science_mode import U
-        else: from unary import U
-        ZERO = U(0)
-        
-        res_coeffs = [ZERO] * (n + m - 1)
+
+        # Determine the Universe (Physics vs Science) for the zero element
+        # (This logic infers the type of zero to use for the accumulator)
+        if hasattr(sample, '_val'):
+            # Science Mode (Integers)
+            import science_mode
+            zero_val = science_mode.U(0)
+        else:
+            # Physics Mode (Unary)
+            import unary
+            zero_val = unary.U(0)
+
+        # Convolve
+        result = [zero_val for _ in range(n + m - 1)]
         for i in range(n):
             for j in range(m):
+                # result[i+j] += self[i] * other[j]
                 term = self.coeffs[i] * other.coeffs[j]
-                res_coeffs[i+j] = res_coeffs[i+j] + term
-        return Polynomial(res_coeffs)
+                result[i + j] = result[i + j] + term
 
+        return self.__class__(result)
     def __truediv__(self, other: Any) -> tuple["Polynomial", "Polynomial"]:
         if not isinstance(other, Polynomial): return NotImplemented
         sample = self.coeffs[0]
