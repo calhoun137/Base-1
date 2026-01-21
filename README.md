@@ -41,7 +41,7 @@ The repository is structured as a modular lab. The core engine is located in `co
 
 1.  **Clone the Repo:**
     ```bash
-    git clone [https://github.com/your-username/Base-1.git](https://github.com/your-username/Base-1.git)
+    git clone [https://github.com/calhoun137/Base-1.git](https://github.com/calhoun137/Base-1.git)
     cd Base-1
     ```
 
