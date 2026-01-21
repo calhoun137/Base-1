@@ -1,6 +1,6 @@
 import pytest
-from stream import Stream
-from transcendental import gcf_to_scf, ln_generator, e_generator
+from core.stream import Stream
+from core.transcendental import gcf_to_scf, ln_generator, e_generator
 
 class TestTranscendental:
     """

@@ -1,7 +1,7 @@
 from typing import Any, List, Iterator
-from polynomial import Polynomial
-import unary
-import science_mode
+from .polynomial import Polynomial
+from . import unary
+from . import science_mode
 
 class GaloisField:
     """

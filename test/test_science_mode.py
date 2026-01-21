@@ -1,5 +1,5 @@
-import unary as physics
-import science_mode as science
+import core.unary as physics
+import core.science_mode as science
 
 def run_comparison(test_name, operation_lambda, expected_val_int, expected_len):
     """

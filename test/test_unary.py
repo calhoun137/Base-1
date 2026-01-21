@@ -1,5 +1,5 @@
 import pytest
-from unary import U, S, NonNegativeInteger, NegativeInteger
+from core.unary import U, S, NonNegativeInteger, NegativeInteger
 
 # [HELPER] - Keeps your assertions clean
 def assert_physics(result, expected_val, expected_type):

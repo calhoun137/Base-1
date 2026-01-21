@@ -1,7 +1,7 @@
-from stream import Stream
-from transcendental import e_generator, gcf_to_scf
-from complex_mode import C, GaussianInteger
-import science_mode as science
+from core.stream import Stream
+from core.transcendental import e_generator, gcf_to_scf
+from core.complex_mode import C, GaussianInteger
+import core.science_mode as science
 
 def run_complex_exp_test():
     print("=== Euler's Identity Stress Test (Complex Exponentiation) ===")

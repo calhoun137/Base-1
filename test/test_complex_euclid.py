@@ -1,8 +1,8 @@
 import pytest
-from algorithms import Euclid
-from stream import Stream
-from complex_mode import C, GaussianInteger
-import complex_mode as complex_backend
+from core.algorithms import Euclid
+from core.stream import Stream
+from core.complex_mode import C, GaussianInteger
+import core.complex_mode as complex_backend
 
 class TestComplexEuclid:
     """

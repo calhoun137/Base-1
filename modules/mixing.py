@@ -5,12 +5,9 @@ import pandas as pd
 import time
 from .base import DashboardModule
 
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../src')))
-
-from collatz_lab import CollatzLab
-from science_mode import U
-from polynomial import Polynomial
+from core.collatz_lab import CollatzLab
+from core.science_mode import U
+from core.polynomial import Polynomial
 
 class MixingLab(DashboardModule):
     @property

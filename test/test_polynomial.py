@@ -1,6 +1,6 @@
 import pytest
-from polynomial import Polynomial
-from unary import U, S
+from core.polynomial import Polynomial
+from core.unary import U, S
 
 # [HELPER]
 def assert_poly(poly, expected_coeffs_ints):

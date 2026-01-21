@@ -1,4 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "base-1"
+version = "1.0.0"
+description = "A computational lab for visualizing arithmetic entropy via polynomial dynamics."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.30.0",
+    "plotly>=5.18.0",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0"
+]
+
+[project.scripts]
+# This allows users to run: 'entropy-lab' in their terminal to launch the app
+entropy-lab = "app:main"
+
 [tool.pytest.ini_options]
 pythonpath = [
-  "./src"
+  "./"
 ]

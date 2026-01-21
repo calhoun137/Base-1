@@ -1,9 +1,9 @@
 import pytest
 import sys
 import os
-import unary
-import science_mode
-from galois import GaloisField
+import core.unary as unary
+import core.science_mode as science_mode
+from core.galois import GaloisField
 
 # --- 1. The Setup (Factories) ---
 def make_field(mode):

@@ -1,8 +1,8 @@
 import math
 from typing import List, Tuple, Any
-from polynomial import Polynomial
-import science_mode as science
-from science_mode import U
+from .polynomial import Polynomial
+from . import science_mode as science
+from .science_mode import U
 
 class CollatzLab:
     """

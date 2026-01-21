@@ -1,6 +1,6 @@
 from typing import List, Any
 from dataclasses import dataclass
-from unary import Algebraic
+from .unary import Algebraic
 
 @dataclass
 class Polynomial(Algebraic):
@@ -83,8 +83,8 @@ class Polynomial(Algebraic):
         max_len = max(len_self, len_other)
         
         sample = self.coeffs[0]
-        if hasattr(sample, '_val'): from science_mode import U
-        else: from unary import U
+        if hasattr(sample, '_val'): from .science_mode import U
+        else: from .unary import U
         ZERO = U(0)
 
         new_coeffs = []
@@ -119,11 +119,11 @@ class Polynomial(Algebraic):
         # (This logic infers the type of zero to use for the accumulator)
         if hasattr(sample, '_val'):
             # Science Mode (Integers)
-            import science_mode
+            from . import science_mode
             zero_val = science_mode.U(0)
         else:
             # Physics Mode (Unary)
-            import unary
+            from . import unary
             zero_val = unary.U(0)
 
         # Convolve
@@ -138,8 +138,8 @@ class Polynomial(Algebraic):
     def __truediv__(self, other: Any) -> tuple["Polynomial", "Polynomial"]:
         if not isinstance(other, Polynomial): return NotImplemented
         sample = self.coeffs[0]
-        if hasattr(sample, '_val'): from science_mode import U
-        else: from unary import U
+        if hasattr(sample, '_val'): from .science_mode import U
+        else: from .unary import U
         ZERO = U(0)
 
         dividend_coeffs = list(self.coeffs)

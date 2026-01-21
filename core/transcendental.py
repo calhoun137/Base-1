@@ -1,7 +1,7 @@
 from typing import Iterator, Tuple, Any
 import math
-import science_mode as science
-from science_mode import U, S, FastInteger
+from . import science_mode as science
+from .science_mode import U, S, FastInteger
 
 class GCFState:
     """

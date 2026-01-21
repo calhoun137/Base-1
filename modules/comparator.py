@@ -2,14 +2,10 @@ import streamlit as st
 import plotly.graph_objects as go
 from .base import DashboardModule
 
-# Import your engines
-import sys, os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-
-from polynomial import Polynomial
-from science_mode import U
-from collatz_lab import CollatzLab
-from galois import GaloisField
+from core.polynomial import Polynomial
+from core.science_mode import U
+from core.collatz_lab import CollatzLab
+from core.galois import GaloisField
 
 class ComparatorModule(DashboardModule):
     @property

@@ -1,8 +1,8 @@
 import pytest
-from algorithms import Euclid
-from stream import Stream
-import unary as physics_backend
-import science_mode as science_backend
+from core.algorithms import Euclid
+from core.stream import Stream
+import core.unary as physics_backend
+import core.science_mode as science_backend
 
 # [HELPER] Factory to switch universes
 def get_matter_factory(mode):

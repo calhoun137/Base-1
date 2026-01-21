@@ -1,7 +1,7 @@
 import pytest
-from complex_mode import GaussianInteger, C
-from science_mode import U, S
-import science_mode as science
+from core.complex_mode import GaussianInteger, C
+from core.science_mode import U, S
+import core.science_mode as science
 
 # [HELPER]
 def assert_complex(result, real_exp, imag_exp):

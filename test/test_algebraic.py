@@ -1,9 +1,9 @@
 import pytest
-from stream import Stream
-from polynomial import Polynomial
-from algorithms import AlgebraicStream
-import unary as physics_backend
-import science_mode as science_backend
+from core.stream import Stream
+from core.polynomial import Polynomial
+from core.algorithms import AlgebraicStream
+import core.unary as physics_backend
+import core.science_mode as science_backend
 
 # [HELPER] Factory to switch universes and build matter
 def make_poly(mode, coeffs_ints):

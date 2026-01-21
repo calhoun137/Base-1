@@ -39,11 +39,11 @@ def AlgebraicStream(poly: Any, max_iter: int = 1000) -> Iterator[Any]:
     # Detect Backend for Factory
     sample = poly.coeffs[0]
     if hasattr(sample, '_val'): 
-        from science_mode import U
+        from .science_mode import U
         ONE = U(1)
         ZERO = U(0)
     else: 
-        from unary import U
+        from .unary import U
         ONE = U(1)
         ZERO = U(0)
 

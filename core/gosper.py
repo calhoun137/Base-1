@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, Optional, List, Tuple, Iterator
 import math
-from stream import Stream
+from .stream import Stream
 
 # --- Helper Functions ---
 

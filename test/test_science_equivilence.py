@@ -1,5 +1,5 @@
 import sys
-import unary as physics_backend
+import core.unary as physics_backend
 
 # --- The Specification ---
 # We expect a future module 'science_mode' to provide these classes.

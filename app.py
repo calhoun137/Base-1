@@ -21,12 +21,12 @@ load_css(css_path)
 
 from modules.collatz import CollatzModule
 from modules.comparator import ComparatorModule
-from modules.mixing import MixingLab  # <--- Import New Module
+from modules.mixing import MixingLab
 
 AVAILABLE_MODULES = [
     CollatzModule(),
     ComparatorModule(),
-    MixingLab()  # <--- Add to list
+    MixingLab()
 ]
 
 # 4. The Sidebar (The Rack)

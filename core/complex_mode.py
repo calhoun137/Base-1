@@ -1,6 +1,6 @@
 from typing import Any, Tuple, Union
-import science_mode as science
-from science_mode import U, S, FastInteger
+from . import science_mode as science
+from .science_mode import U, S, FastInteger
 
 class GaussianInteger:
     """

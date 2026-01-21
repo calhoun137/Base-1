@@ -1,11 +1,11 @@
 import pytest
 import math
-from stream import Stream
-from continued_fraction import ContinuedFraction
-from gosper import GosperState
-from algorithms import Euclid
-import unary as physics_backend
-import science_mode as science_backend
+from core.stream import Stream
+from core.continued_fraction import ContinuedFraction
+from core.gosper import GosperState
+from core.algorithms import Euclid
+import core.unary as physics_backend
+import core.science_mode as science_backend
 
 # [HELPER] Factory to switch universes
 def get_backend(mode):
