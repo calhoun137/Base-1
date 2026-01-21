@@ -1,0 +1,72 @@
+/* dashboard/style.css */
+
+/* --- The Main Console Aesthetic --- */
+.stApp {
+    background-color: #0e1117; /* Deep Space Black */
+    font-family: 'Courier New', Courier, monospace; /* Terminal Font */
+}
+
+/* --- The Matter Tape (Glowing Blocks) --- */
+.matter-tape-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.matter-block {
+    width: 20px;
+    height: 30px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+/* State: Zero / Vacuum (Dim) */
+.matter-zero {
+    background-color: #1f2937;
+    color: #4b5563;
+    border: 1px solid #374151;
+}
+
+/* State: One / Matter (Cyan Glow) */
+.matter-one {
+    background-color: #06b6d4;
+    box-shadow: 0 0 8px #06b6d4;
+    border: 1px solid #22d3ee;
+}
+
+/* State: Two+ / High Pressure (Red Pulse) */
+.matter-hot {
+    background-color: #ef4444;
+    color: white;
+    box-shadow: 0 0 10px #ef4444;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* --- Telemetry Text --- */
+.telemetry-label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.telemetry-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f3f4f6;
+}
