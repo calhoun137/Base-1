@@ -17,16 +17,19 @@ def load_css(file_name):
 
 # Path to style.css (assuming it's in the same folder as app.py)
 css_path = os.path.join(os.path.dirname(__file__), 'style.css')
-load_css(css_path)
+if os.path.exists(css_path):
+    load_css(css_path)
 
 from modules.collatz import CollatzModule
 from modules.comparator import ComparatorModule
 from modules.mixing import MixingLab
+from modules.zeta import ZetaModule  # <--- NEW IMPORT
 
 AVAILABLE_MODULES = [
     CollatzModule(),
     ComparatorModule(),
-    MixingLab()
+    MixingLab(),
+    ZetaModule()  # <--- NEW CARTRIDGE
 ]
 
 # 4. The Sidebar (The Rack)
@@ -64,7 +67,7 @@ else:
     **Status:**
     * Physics Engine: `Ready`
     * Visualization Core: `Online`
-    * Modules Loaded: `0`
+    * Modules Loaded: `4`
     
     *Inject a cartridge to begin experimentation.*
     """)
