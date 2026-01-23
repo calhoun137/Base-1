@@ -8,7 +8,17 @@
 
 Base-1 is a computational research kernel designed to decouple "arithmetic" from "algebra." It treats numbers not as static values, but as dynamic collections of matter subject to physical laws (growth, entropy, decay).
 
-## ⚡ Current Deployment: The Collatz Entropy Lab
+## 🚀 Live Demo
+
+Check out the live demo and blog post (here)[https://mathinspector.com/papers/collatz-polynomial-entropy.html]
+
+## What's new in version 1.01
+
+Compute the zero's of the zeta function and scan the critical line while measuring the entropy in the continued fraction arithmetic engine (Gosper Engine) during the computation.
+
+![Zeta Critical Line Scan](assets/critical-line-scan.png)
+
+## ⚡ The Collatz Entropy Lab
 
 We have configured the Base-1 engine to model the **Collatz Conjecture (3n+1)** as a fluid dynamics problem.
 
