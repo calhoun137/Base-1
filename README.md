@@ -10,7 +10,7 @@ Base-1 is a computational research kernel designed to decouple "arithmetic" from
 
 ## 🚀 Live Demo
 
-Check out the live demo and blog post (here)[https://mathinspector.com/papers/collatz-polynomial-entropy.html]
+Check out the [live demo and blog post here](https://mathinspector.com/papers/collatz-polynomial-entropy.html)
 
 ## What's new in version 1.01
 
