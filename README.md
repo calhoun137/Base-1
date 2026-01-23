@@ -16,7 +16,7 @@ Check out the live demo and blog post (here)[https://mathinspector.com/papers/co
 
 Compute the zero's of the zeta function and scan the critical line while measuring the entropy in the continued fraction arithmetic engine (Gosper Engine) during the computation.
 
-![Zeta Critical Line Scan](assets/critical-line-scan.png)
+![Zeta Critical Line Scan](assets/critical_line_scan.png)
 
 ## ⚡ The Collatz Entropy Lab
 
