@@ -4,8 +4,6 @@
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![Streamlit](https://img.shields.io/badge/framework-streamlit-red) ![License](https://img.shields.io/badge/license-MIT-green)
 
-> *"Mathematics is not yet ready for such problems."* — Paul Erdős
-
 Base-1 is a computational research kernel designed to decouple "arithmetic" from "algebra." It treats numbers not as static values, but as dynamic collections of matter subject to physical laws (growth, entropy, decay).
 
 ## 🚀 Live Demo
