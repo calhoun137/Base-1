@@ -1,8 +1,3 @@
-import sys
-import os
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from typing import Iterator, Tuple, Any
 from core.science_mode import U as ScienceU
 from core.algorithms import Euclid

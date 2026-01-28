@@ -3,8 +3,6 @@ import os
 import math
 from typing import Iterator, Tuple, Any
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from core.science_mode import U as ScienceU
 
 class RationalState:
