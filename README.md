@@ -1,6 +1,6 @@
 # Base-1
 
-**A Unary Number Representation Implementation in Python**
+**Unary Number Representation in Python**
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue) ![Streamlit](https://img.shields.io/badge/framework-streamlit-red) ![License](https://img.shields.io/badge/license-MIT-green)
 
